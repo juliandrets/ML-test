@@ -1,0 +1,155 @@
+body {
+  background-color: #ebebeb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden; }
+
+input:focus, button:focus {
+  outline: 0px; }
+
+button {
+  cursor: pointer; }
+
+header {
+  height: 50px;
+  background-color: #ffec00; }
+  header .logo {
+    float: left;
+    max-width: 55px;
+    height: 35px;
+    margin: 8px 0px 8px 0px; }
+  header #search {
+    max-width: calc(100% - 75px);
+    width: 100%;
+    height: 50px;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    header #search input {
+      max-width: calc(100% - 40px);
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: none;
+      font-size: 15px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px; }
+    header #search button {
+      max-width: 40px;
+      width: 100%;
+      border: none;
+      font-size: 18px;
+      height: 34px;
+      text-align: center;
+      background-color: #eeeeee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px; }
+      header #search button img {
+        height: 18px; }
+
+main {
+  max-width: 1000px;
+  margin: 0 auto; }
+  main #breadcrumbs {
+    margin: 16px 0px 16px 0px;
+    font-size: 14px;
+    color: #666666; }
+    main #breadcrumbs li {
+      display: inline-block; }
+      main #breadcrumbs li span {
+        margin: 0px 5px; }
+  main #results {
+    background-color: #fff; }
+    main #results li {
+      padding: 0px 16px; }
+      main #results li article {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border-bottom: 1px solid #eee;
+        padding: 16px 0px; }
+        main #results li article figure {
+          width: 180px;
+          height: 180px;
+          border-radius: 4px;
+          overflow: hidden; }
+          main #results li article figure img {
+            width: 100%; }
+        main #results li article .info {
+          max-width: calc(100% - 180px - 16px);
+          width: 100%;
+          text-align: left; }
+          main #results li article .info div {
+            margin-top: 16px;
+            overflow: hidden; }
+            main #results li article .info div h3 {
+              font-size: 24px;
+              float: left; }
+            main #results li article .info div .freeShipping {
+              position: relative;
+              height: 20px;
+              top: 3px;
+              left: 5px;
+              float: left; }
+            main #results li article .info div h4 {
+              font-size: 12px;
+              float: right;
+              color: #999;
+              margin-right: 50px; }
+          main #results li article .info h2 {
+            font-size: 18px;
+            margin-top: 32px; }
+  main #product {
+    background-color: #fff; }
+    main #product #primaryInfo {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 16px;
+      box-sizing: border-box; }
+      main #product #primaryInfo figure {
+        padding-top: 16px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 680px;
+        max-height: 680px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px; }
+        main #product #primaryInfo figure img {
+          width: 100%; }
+      main #product #primaryInfo section {
+        max-width: calc(100% - 680px);
+        width: 100%; }
+        main #product #primaryInfo section h2 {
+          margin-top: 16px;
+          font-size: 24px;
+          vertical-align: top; }
+        main #product #primaryInfo section h3 {
+          margin-top: 32px;
+          font-size: 46px; }
+        main #product #primaryInfo section h4 {
+          font-size: 14px;
+          padding-top: 32px; }
+    main #product #description {
+      padding: 36px;
+      box-sizing: border-box; }
+      main #product #description h2 {
+        font-size: 28px; }
+      main #product #description p {
+        margin-top: 32px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #999999; }
