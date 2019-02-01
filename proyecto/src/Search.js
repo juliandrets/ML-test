@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './img/mercadolibre-logo.png';
-import search from './img/search.png';
 import SearchItem from './components/SearchItem';
-import Breadcrumbs from './components/Breadcrumbs';
+import Header from './components/struct/Header';
+import queryString from 'query-string';
 
 class Search extends Component {
   state = {
@@ -11,42 +10,32 @@ class Search extends Component {
     results: ''
   }
 
-  searchSubmit = async e => {
-    e.preventDefault();
-    const search = this.state.post;
-    console.log(search)
-    const response = await fetch('/api/search/' + this.state.post, {
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search)
+    fetch('/api/search/' + values.search, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
-      body: JSON.stringify({ post: this.state.post }),
+    },
+    ).then(response => {
+      if (response.ok) {
+        response.json().then(json => {
+          this.setState({ results: json });
+        });
+      }
     });
-    const body = await response.json();
-    this.setState({ results: body });
-  };
+  }
 
   render() {
     const products = Array.from(this.state.results);
 
     return (
       <div className="Search">
-        <header>
-          <section className="content">
-            <img src={logo} className="logo" alt="logo" />
-            <form id="search" onSubmit={this.searchSubmit} method="GET">
-              <input type="text" id="q"
-                onChange={e => this.setState({ post: e.target.value })}
-                placeholder="Nunca dejes de buscar"
-                value={this.state.post}
-              />
-              <button type="submit"><img src={search} /></button>
-            </form>
-          </section>
-        </header>
+        <Header />
 
         <main>
-          <Breadcrumbs />
+          <ul id="breadcrumbs"></ul>
 
           <ul id="results">
             {

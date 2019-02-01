@@ -29,6 +29,23 @@ class Test extends Component {
     const body = await response.text();
     this.setState({ responseToPost: body });
   };
+
+  /*searchSubmit = async e => {
+    e.preventDefault();
+    const search = this.state.post;
+    console.log(search)
+    const response = await fetch('/api/search/' + this.state.post, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ post: this.state.post }),
+    });
+    const body = await response.json();
+    this.setState({ results: body });
+  };*/
+
+  
 render() {
     return (
       <div className="Test">

@@ -28,6 +28,16 @@ button {
   cursor: pointer;
 }
 
+.btn {
+  background-color: #3277ff;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+
 header {
   height: 50px;
   background-color: $primaryColor;
@@ -81,6 +91,7 @@ header {
 
 main {
   max-width: 1000px;
+  padding-bottom: 50px;
   margin: 0 auto;
 
   #breadcrumbs {
@@ -95,10 +106,16 @@ main {
         margin: 0px 5px;
       }
     }
+    li:last-child {
+      span {
+        display: none;
+      }
+    }
   }
 
   #results {
     background-color: #fff;
+    border-radius: 4px;
 
     li {
     padding: 0px 16px;
@@ -160,6 +177,7 @@ main {
 
   #product {
     background-color: #fff;
+    border-radius: 4px;
 
     #primaryInfo {
       display: flex;
@@ -176,10 +194,11 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 50px;
+        padding: 32px 50px 0px 50px;
 
         img {
-          width: 100%;
+          max-width: 100%;
+          max-height: 680px;
         }
       }
 
@@ -194,7 +213,8 @@ main {
         }
         h3 {
           margin-top: 32px;
-          font-size: 46px
+          font-size: 46px;
+          margin-bottom: 32px;
         }
         h4 {
           font-size: 14px;

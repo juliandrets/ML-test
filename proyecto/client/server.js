@@ -53,7 +53,7 @@ app.get('/api/items/:id/description', (req, res, next) => {
 app.get('/api/categories/:id', (req, res, next) => {
   var request = require("request");
   var search = req.params.id;
-
+  
   request('https://api.mercadolibre.com/categories/' + search, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var items = JSON.parse(body);

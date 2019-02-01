@@ -18,6 +18,15 @@ input:focus, button:focus {
 button {
   cursor: pointer; }
 
+.btn {
+  background-color: #3277ff;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: white;
+  border-radius: 4px;
+  border: none; }
+
 header {
   height: 50px;
   background-color: #ffec00; }
@@ -61,6 +70,7 @@ header {
 
 main {
   max-width: 1000px;
+  padding-bottom: 50px;
   margin: 0 auto; }
   main #breadcrumbs {
     margin: 16px 0px 16px 0px;
@@ -70,8 +80,11 @@ main {
       display: inline-block; }
       main #breadcrumbs li span {
         margin: 0px 5px; }
+    main #breadcrumbs li:last-child span {
+      display: none; }
   main #results {
-    background-color: #fff; }
+    background-color: #fff;
+    border-radius: 4px; }
     main #results li {
       padding: 0px 16px; }
       main #results li article {
@@ -112,7 +125,8 @@ main {
             font-size: 18px;
             margin-top: 32px; }
   main #product {
-    background-color: #fff; }
+    background-color: #fff;
+    border-radius: 4px; }
     main #product #primaryInfo {
       display: flex;
       justify-content: space-between;
@@ -127,9 +141,10 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 50px; }
+        padding: 32px 50px 0px 50px; }
         main #product #primaryInfo figure img {
-          width: 100%; }
+          max-width: 100%;
+          max-height: 680px; }
       main #product #primaryInfo section {
         max-width: calc(100% - 680px);
         width: 100%; }
@@ -139,7 +154,8 @@ main {
           vertical-align: top; }
         main #product #primaryInfo section h3 {
           margin-top: 32px;
-          font-size: 46px; }
+          font-size: 46px;
+          margin-bottom: 32px; }
         main #product #primaryInfo section h4 {
           font-size: 14px;
           padding-top: 32px; }

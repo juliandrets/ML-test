@@ -16,13 +16,13 @@ class SearchItem extends Component {
         <article>
           <a href={itemRoute}>
             <figure>
-              <img src={picture} />
+              <img src={picture} alt={title} />
             </figure>
           </a>
           <section className="info">
             <div>
                 <h3>$ {price}</h3>
-                <img src={ic_shipping} className="freeShipping" style={{ visibility: freeShipping ? 'visible' : 'hidden' }} />
+                <img src={ic_shipping} className="freeShipping" alt="envio gratis" style={{ visibility: freeShipping ? 'visible' : 'hidden' }} />
                 <h4>{addressState}</h4>
             </div>
             <h2>{title}</h2>
