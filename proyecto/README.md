@@ -3,5 +3,5 @@
 - En una terminal nos paramos dentro de la carpeta backend y escribimos node server.js para levantar el servidor de node express.
 
 ## Versiones
-NodeJS v10.15.0
-NPM 6.4.1
+- NodeJS v10.15.0
+- NPM 6.4.1
