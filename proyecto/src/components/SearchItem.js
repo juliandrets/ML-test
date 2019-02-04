@@ -7,9 +7,10 @@ class SearchItem extends Component {
     const itemRoute = "./items/" + id + "/";
     const title = this.props.title;
     const price = this.props.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 });
-    const picture = this.props.thumbnail;
+    let picture = this.props.bestPicture ? this.props.bestPicture : this.props.thumbnail;
     const freeShipping = this.props.shipping.free_shipping;
     const addressState = this.props.address.state_name;
+
 
     return(
       <li>

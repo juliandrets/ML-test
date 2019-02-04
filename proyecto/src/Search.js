@@ -7,8 +7,6 @@ import queryString from 'query-string';
 
 class Search extends Component {
   state = {
-    response: '',
-    post: '',
     results: '',
     filters: '',
     pictures: '',
@@ -59,6 +57,7 @@ class Search extends Component {
     if (filters[0]) {
       const breadcrumbs = [];
       const items = filters[0].values[0].path_from_root;
+      
       for(var i=0; i < items.length; i++) {
         breadcrumbs.push(<Breadcrumbs key={i} data={items[i].name}></Breadcrumbs>);
       }
@@ -66,11 +65,39 @@ class Search extends Component {
     }
   }
 
+  // Set hight quality pictures into items
+  setPictures(products, pictures) {
+    if (products && pictures) {
+      products.map((product) => {
+        pictures.map((picture) => {
+          if (picture.body.id === product.id) {
+             product.bestPicture = picture.body.pictures[0].url;
+          }
+        });
+      });
+    }
+  }
+
+  // second option
+  /*setPictures(products, pictures) {
+    if (products && pictures) {
+      for (var i = 0; i < products.length; i++) {
+        for (var e = 0; e < pictures.length; e++) {
+          if (pictures[e].body.id === products[i].id) {
+             products[i].bestPicture = pictures[e].body.pictures[0].url;
+          }
+        }
+      }
+    }
+  }*/
+
   render() {
     const products = Array.from(this.state.results);
     const pictures = Array.from(this.state.pictures);
     const filters = Array.from(this.state.filters);
     const breadcrumbs = this.setBreadcumbs(filters)
+
+    this.setPictures(products, pictures);
 
     let loader = this.state.loading ? <Loader /> : null
 

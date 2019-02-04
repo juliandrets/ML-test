@@ -113,7 +113,9 @@ main {
           width: 180px;
           height: 180px;
           border-radius: 4px;
-          overflow: hidden; }
+          overflow: hidden;
+          display: flex;
+          align-items: center; }
           main #results li article figure img {
             width: 100%; }
         main #results li article .info {
