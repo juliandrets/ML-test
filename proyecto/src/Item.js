@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Breadcrumbs from './components/Breadcrumbs';
 import Header from './components/struct/Header';
+import Loader from './components/struct/Loader';
 
 class Item extends Component {
   state = {
@@ -10,6 +11,7 @@ class Item extends Component {
     description: '',
     breadcrumbs: '',
     category: '',
+    loading: true
   }
 
   componentDidMount() {
@@ -22,41 +24,44 @@ class Item extends Component {
       },
       ).then(response => {
         if (response.ok) {
+          // get category id
           response.json().then(json => {
             this.setState({ results: json });
             this.setState({ category: json.category_id });
-          });
-        }
-      })
-      .then(response => {
-        // get category for breadcrumbs
-        fetch('/api/categories/' + this.state.category, {
-          method: 'GET',
-          headers: {
-            Accept: 'application/json',
-          },
-        },
-        ).then(response => {
-          if (response.ok) {
-            response.json().then(json => {
-              this.setState({ breadcrumbs: json });
-            });
-          }
-        });
-      });
 
-      // get description
-      fetch('/api/items/' + this.props.match.params.id + '/description', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-        },
-      },
-      ).then(response => {
-        if (response.ok) {
-          response.json().then(json => {
-            this.setState({ description: json });
+            // get breadcrumbs
+            fetch('/api/categories/' + json.category_id, {
+              method: 'GET',
+              headers: {
+                Accept: 'application/json',
+              },
+            },
+            // get breadcrumbs
+            ).then(response => {
+              if (response.ok) {
+                response.json().then(json => {
+                  this.setState({ breadcrumbs: json });
+                });
+              }
+            });
+            // get description
+            fetch('/api/items/' + this.props.match.params.id + '/description', {
+              method: 'GET',
+              headers: {
+                Accept: 'application/json',
+              },
+            },
+            ).then(response => {
+              if (response.ok) {
+                response.json().then(json => {
+                  this.setState({ description: json });
+                  this.setState({loading: false})
+                });
+              }
+            });
+
           });
+
         }
       });
   }
@@ -72,12 +77,14 @@ class Item extends Component {
     }
   }
 
+  // Get first product image
   getFirstPicture(item) {
     if (item) {
       return item.pictures[0].secure_url;
     }
   }
 
+  // Set breadcrumbs
   setBreadcumbs(item) {
     const breadcrumbs = [];
     if (item) {
@@ -95,12 +102,14 @@ class Item extends Component {
     const itemCondition = this.getItemCondition(product);
     const picture = this.getFirstPicture(product);
     const breadcrumbs = this.setBreadcumbs(this.state.breadcrumbs)
+    let loader = this.state.loading ? <Loader /> : null
 
     return (
       <div className="Product">
         <Header />
+        {loader}
 
-        <main>
+        <main className="content">
           <ul id="breadcrumbs">{breadcrumbs}</ul>
 
           <article id='product'>
@@ -120,9 +129,7 @@ class Item extends Component {
               <p>{description.plain_text}</p>
             </section>
           </article>
-
         </main>
-
       </div>
     );
   }
