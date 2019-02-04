@@ -1,5 +1,6 @@
 $primaryColor : #ffec00;
 $textColor : #999999;
+$buttonColor: #3277ff;
 
 body {
   background-color: #ebebeb;
@@ -8,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
 }
 
 code {
@@ -45,7 +47,7 @@ button {
 }
 
 .btn {
-  background-color: #3277ff;
+  background-color: $buttonColor;
   width: 100%;
   padding: 10px 0px;
   font-size: 16px;
