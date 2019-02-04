@@ -57,7 +57,6 @@ class Search extends Component {
     if (filters[0]) {
       const breadcrumbs = [];
       const items = filters[0].values[0].path_from_root;
-
       for(var i=0; i < items.length; i++) {
         breadcrumbs.push(<Breadcrumbs key={i} data={items[i].name}></Breadcrumbs>);
       }
