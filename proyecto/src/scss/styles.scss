@@ -131,6 +131,11 @@ main {
         display: none;
       }
     }
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      line-height: 20px
+    }
   }
 
   #results {
@@ -156,6 +161,16 @@ main {
 
           img {
             width: 100%;
+          }
+
+          @media (max-width: 645px) {
+            width: 120px;
+            height: 120px;
+          }
+
+          @media (max-width: 450px) {
+            width: 80px;
+            height: 80px;;
           }
         }
 
@@ -186,11 +201,63 @@ main {
               color: #999;
               margin-right: 50px;
             }
+
+            @media (max-width: 645px) {
+              h3 {
+                font-size: 20px;
+              }
+              h4 {
+                margin-right: 20px;
+              }
+              .freeShipping {
+                height: 15px;
+                width: 15px;
+              }
+
+              @media (max-width: 450px) {
+                h3 {
+                  font-size: 18px;
+                }
+                h4 {
+                  font-size: 10px;
+                }
+              }
+
+              @media (max-width: 350px) {
+                h4 {
+                  display: none;
+                }
+              }
+            }
           }
 
           h2 {
             font-size: 18px;
             margin-top: 32px;
+          }
+
+          @media (max-width: 645px) {
+            max-width: calc(100% - 120px - 16px);
+
+            h2 {
+              font-size: 14px;
+              margin-top: 15px
+            }
+          }
+
+          @media (max-width: 450px) {
+            max-width: calc(100% - 80px - 16px);
+
+            h2 {
+              font-size: 12px;
+              margin-top: 10px;
+            }
+          }
+
+          @media (max-width: 350px) {
+            h2 {
+              margin-top: 5px;
+            }
           }
         }
       }
@@ -260,6 +327,15 @@ main {
         @media (max-width: 1050px) {
           max-width: 100%;
         }
+
+        @media (max-width: 410px) {
+          h2 {
+            font-size: 18px
+          }
+          h3 {
+            font-size: 32px;
+          }
+        }
       }
     }
 
@@ -277,6 +353,15 @@ main {
         line-height: 24px;
         color: $textColor;
         white-space: pre-wrap;
+      }
+
+      @media (max-width: 410px) {
+        h2 {
+          font-size: 18px
+        }
+        p {
+          font-size: 14px;
+        }
       }
     }
   }

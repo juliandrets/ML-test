@@ -99,6 +99,10 @@ main {
         margin: 0px 5px; }
     main #breadcrumbs li:last-child span {
       display: none; }
+    @media (max-width: 768px) {
+      main #breadcrumbs {
+        font-size: 12px;
+        line-height: 20px; } }
   main #results {
     background-color: #fff;
     border-radius: 4px; }
@@ -119,6 +123,14 @@ main {
           align-items: center; }
           main #results li article figure img {
             width: 100%; }
+          @media (max-width: 645px) {
+            main #results li article figure {
+              width: 120px;
+              height: 120px; } }
+          @media (max-width: 450px) {
+            main #results li article figure {
+              width: 80px;
+              height: 80px; } }
         main #results li article .info {
           max-width: calc(100% - 180px - 16px);
           width: 100%;
@@ -140,9 +152,41 @@ main {
               float: right;
               color: #999;
               margin-right: 50px; }
+            @media (max-width: 645px) {
+              main #results li article .info div h3 {
+                font-size: 20px; }
+              main #results li article .info div h4 {
+                margin-right: 20px; }
+              main #results li article .info div .freeShipping {
+                height: 15px;
+                width: 15px; } }
+@media (max-width: 645px) and (max-width: 450px) {
+  main #results li article .info div h3 {
+    font-size: 18px; }
+  main #results li article .info div h4 {
+    font-size: 10px; } }
+@media (max-width: 645px) and (max-width: 350px) {
+  main #results li article .info div h4 {
+    display: none; } }
+
           main #results li article .info h2 {
             font-size: 18px;
             margin-top: 32px; }
+          @media (max-width: 645px) {
+            main #results li article .info {
+              max-width: calc(100% - 120px - 16px); }
+              main #results li article .info h2 {
+                font-size: 14px;
+                margin-top: 15px; } }
+          @media (max-width: 450px) {
+            main #results li article .info {
+              max-width: calc(100% - 80px - 16px); }
+              main #results li article .info h2 {
+                font-size: 12px;
+                margin-top: 10px; } }
+          @media (max-width: 350px) {
+            main #results li article .info h2 {
+              margin-top: 5px; } }
   main #product {
     background-color: #fff;
     border-radius: 4px; }
@@ -191,6 +235,11 @@ main {
         @media (max-width: 1050px) {
           main #product #primaryInfo section {
             max-width: 100%; } }
+        @media (max-width: 410px) {
+          main #product #primaryInfo section h2 {
+            font-size: 18px; }
+          main #product #primaryInfo section h3 {
+            font-size: 32px; } }
     main #product #description {
       padding: 36px;
       box-sizing: border-box; }
@@ -202,3 +251,8 @@ main {
         line-height: 24px;
         color: #999999;
         white-space: pre-wrap; }
+      @media (max-width: 410px) {
+        main #product #description h2 {
+          font-size: 18px; }
+        main #product #description p {
+          font-size: 14px; } }
