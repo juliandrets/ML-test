@@ -67,8 +67,8 @@ class Search extends Component {
   // Set hight quality pictures into items
   setPictures(products, pictures) {
     if (products && pictures) {
-      products.map((product) => {
-        pictures.map((picture) => {
+      products.forEach((product) => {
+        pictures.forEach((picture) => {
           if (picture.body.id === product.id) {
              product.bestPicture = picture.body.pictures[0].url;
           }
